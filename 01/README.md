@@ -27,10 +27,20 @@ Run a single spec file:
 bundle exec rspec spec/greeter_spec.rb
 ```
 
+## Code Coverage
+
+Tests generate a SimpleCov report in `coverage/`:
+
+```bash
+bundle exec rspec
+open coverage/index.html
+```
+
 ## Project Structure
 
 ```
 01/
+├── .simplecov
 ├── Gemfile
 ├── lib/
 │   └── greeter.rb

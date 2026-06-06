@@ -1,3 +1,5 @@
+require "simplecov"
+
 require_relative "../lib/greeter"
 
 RSpec.describe Greeter do
