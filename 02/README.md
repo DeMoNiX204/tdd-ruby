@@ -21,7 +21,11 @@ npm install
 npx playwright install chromium
 ```
 
-## Run the app
+## Run server and tests (two terminals)
+
+Start the Rails server first — Playwright does **not** start it for you.
+
+**Terminal 1 — Rails server**
 
 ```bash
 bin/rails server
@@ -29,9 +33,7 @@ bin/rails server
 
 Visit http://localhost:3000
 
-## Run Playwright tests
-
-Playwright starts the Rails server automatically.
+**Terminal 2 — Playwright tests** (server must already be running)
 
 ```bash
 npm run test:e2e
