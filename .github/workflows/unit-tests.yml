@@ -6,10 +6,15 @@ on:
 
 jobs:
   rspec:
+    name: RSpec (${{ matrix.project }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ["01", "02"]
     defaults:
       run:
-        working-directory: "02"
+        working-directory: ${{ matrix.project }}
 
     steps:
       - name: Checkout
@@ -20,12 +25,7 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true
-          working-directory: "02"
-
-      # - name: Prepare test database
-      #   run: bin/rails db:test:prepare
-      #   env:
-      #     RAILS_ENV: test
+          working-directory: ${{ matrix.project }}
 
       - name: Run RSpec
         run: bundle exec rspec
