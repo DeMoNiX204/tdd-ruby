@@ -9,6 +9,25 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  root "shop#index"
+  post "checkout", to: "checkout#index"
+
+  unless Rails.env.production?
+    namespace :api do
+      namespace :test do
+        put "products", to: "products#create_from_list"
+        delete "products", to: "products#delete_from_list"
+      end
+    end
+  end
+
+  # unless Rails.env.production?
+  #   namespace :api do
+  #     namespace :test do
+  #       resource :discount_rule, only: %i[show update], controller: "discount_rules" do
+  #         post :reset, on: :member
+  #       end
+  #     end
+  #   end
+  # end
 end

@@ -46,11 +46,7 @@ For inline coverage gutters in Cursor/VS Code, see [COVERAGE_GUTTERS.md](COVERAG
 ├── .simplecov
 ├── Gemfile
 ├── lib/
-│   ├── cart.rb
 │   ├── greeter.rb
-│   └── item.rb
 └── spec/
-    ├── spec_helper.rb
-    ├── cart_spec.rb
     └── greeter_spec.rb
 ```
