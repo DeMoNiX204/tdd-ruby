@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: 02
+        working-directory: "02"
 
     steps:
       - name: Checkout
@@ -20,7 +20,7 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true
-          working-directory: 02
+          working-directory: "02"
 
       - name: Prepare test database
         run: bin/rails db:test:prepare
