@@ -15,7 +15,6 @@ class Cart
   end
 
   def getfreebie
-    total = @item.count
-    @gift_rule.apply(total)
+    @gift_rule.apply(@item.count)
   end
 end
